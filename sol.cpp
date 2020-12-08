@@ -17,16 +17,12 @@ void solve() {
 		cin >> a[i];
 		sum+=a[i];
 	}
-	sum/=n;
-	int ans=INT_MAX;
 	for(int i=0; i<n; ++i)
-		if(sum==a[i])
-			ans=min(ans, i+1);
-	if(ans<=n)
-		cout << ans;
-	else
-		cout << "Impossible";
-	cout << "\n";
+		if(sum/n==a[i]) {
+			cout << i+1 << "\n";
+			return;
+		}
+	cout << "Impossible\n";
 }
 
 int main() {
